@@ -27,18 +27,14 @@ def longest_palindrome(word):
 
 		while j < len(word):
 
-			sub = word[i:j+1]
+			if is_palindrome(word[i:j+1]):
 
-			if is_palindrome(sub):
+				if len(word[i:j+1]) > len(longest):
 
-				if len(sub) > len(longest):
-
-					longest = sub
+					longest = word[i:j+1]
 
 			j += 1
 
 	return longest
 
 
-print(longest_palindrome("bananas"))
-print(longest_palindrome("racecar"))
